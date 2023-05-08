@@ -14,4 +14,4 @@ neural network with **TensorFlow**.
 # About Dataset
 The data is divided into training and testing sets. Although the provided training data is sufficient to build a
 decent model, you can further improve the model's performance by sourcing additional audio clips, which
-can be downloaded through a [Google Drive](https://drive.google.com/file/d/1Zt64NTiPbjJ4wGdaAC3AYvGQr8hst6u_/view).
+can be downloaded through [Google Drive](https://drive.google.com/file/d/1Zt64NTiPbjJ4wGdaAC3AYvGQr8hst6u_/view).
