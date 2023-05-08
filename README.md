@@ -1,6 +1,7 @@
 # Capuchinbird calls detection
 ## Table Of Contents
-
+1. [Description](https://github.com/RaudelCasas1603/Monky-Detection-#description)
+2. [About Dataset](https://github.com/RaudelCasas1603/Monky-Detection-#about-dataset)
 
 # Description
 **A machine learning model** that can accurately count the number of Capuchinbird calls within an audio clip,
