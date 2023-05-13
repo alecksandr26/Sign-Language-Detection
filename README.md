@@ -21,3 +21,4 @@ can be downloaded through [Google Drive](https://drive.google.com/file/d/1Zt64NT
 * Z by HP Unlocked Challenge 3 - Signal Processing. (2022, February 17). Kaggle. https://www.kaggle.com/datasets/kenjee/z-by-hp-unlocked-challenge-3-signal-processing
 * Building a data pipeline. (n.d.). https://cs230.stanford.edu/blog/datapipeline/#best-practices
 * Better performance with the tf.data API. (n.d.). TensorFlow. https://www.tensorflow.org/guide/data_performance
+* Thevenot, A. (2022, February 17). Conv2d: Finally Understand What Happens in the Forward Pass. Medium. https://towardsdatascience.com/conv2d-to-finally-understand-what-happens-in-the-forward-pass-1bbaafb0b148
