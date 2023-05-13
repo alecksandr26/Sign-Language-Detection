@@ -19,3 +19,4 @@ can be downloaded through [Google Drive](https://drive.google.com/file/d/1Zt64NT
 # References
 * Nicholas Renotte. (2022, April 16). Build a Deep Audio Classifier with Python and Tensorflow [Video]. YouTube. https://www.youtube.com/watch?v=ZLIPkmmDJAc
 * Z by HP Unlocked Challenge 3 - Signal Processing. (2022, February 17). Kaggle. https://www.kaggle.com/datasets/kenjee/z-by-hp-unlocked-challenge-3-signal-processing
+* Building a data pipeline. (n.d.). https://cs230.stanford.edu/blog/datapipeline/#best-practices
