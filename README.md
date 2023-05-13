@@ -17,5 +17,5 @@ decent model, you can further improve the model's performance by sourcing additi
 can be downloaded through [Google Drive](https://drive.google.com/file/d/1Zt64NTiPbjJ4wGdaAC3AYvGQr8hst6u_/view).
 
 # References
-1. Nicholas Renotte. (2022, April 16). Build a Deep Audio Classifier with Python and Tensorflow [Video]. YouTube. https://www.youtube.com/watch?v=ZLIPkmmDJAc
-2. Z by HP Unlocked Challenge 3 - Signal Processing. (2022, February 17). Kaggle. https://www.kaggle.com/datasets/kenjee/z-by-hp-unlocked-challenge-3-signal-processing
+* Nicholas Renotte. (2022, April 16). Build a Deep Audio Classifier with Python and Tensorflow [Video]. YouTube. https://www.youtube.com/watch?v=ZLIPkmmDJAc
+* Z by HP Unlocked Challenge 3 - Signal Processing. (2022, February 17). Kaggle. https://www.kaggle.com/datasets/kenjee/z-by-hp-unlocked-challenge-3-signal-processing
