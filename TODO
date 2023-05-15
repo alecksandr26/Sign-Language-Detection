@@ -1,9 +1,8 @@
-- Hacer presentacio
-  	- Presentar el objetivo del proyecto
-  	- Presetnar que datos usamos
-	- Como entrenamos
-	- como afinamos
-	- Codigo corriendo
-
+---- 2023/05/15 ----
+* Organize all the scripts [ ]
+* Store all the generated data into compressed file [ ]
+* Try to make it works with n hands on the video [ ]
+* Create a simple command line interface [ ]
+* Find a way to upload the data fetch the data [ ]
 
 
