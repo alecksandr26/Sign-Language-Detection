@@ -31,4 +31,6 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+
+    license = "MIT",
 )
