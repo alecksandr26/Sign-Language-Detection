@@ -14,3 +14,4 @@ blah blah blah not available yet...
 * Computer vision engineer. (2023, January 26). Sign language detection with Python and Scikit Learn | Landmark detection | Computer vision tutorial [Video]. YouTube. https://www.youtube.com/watch?v=MJCSjXepaAM
 * Normalized Nerd. (2021, January 13). Decision Tree Classification Clearly Explained! [Video]. YouTube. https://www.youtube.com/watch?v=ZVR2Way4nwQ
 * Normalized Nerd. (2021b, April 21). Random Forest Algorithm Clearly Explained! [Video]. YouTube. https://www.youtube.com/watch?v=v6VJ2RO66A
+* Gutta, S. (2022, January 6). Folder Structure for Machine Learning Projects | by Surya Gutta  | Analytics Vidhya. Medium. https://medium.com/analytics-vidhya/folder-structure-for-machine-learning-projects-a7e451a8caaa
