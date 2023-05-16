@@ -1,12 +1,16 @@
 ---- 2023/05/15 ----
 * Organize all the scripts [X]
 * Store all the generated data into compressed file [ ]
-* Try to make it works with n hands on the video [ ]
+* Try to make it works with n hands on the video [X]
 * Create a simple command line interface [X]
 * Find a way to upload the data fetch the data [ ]
 * Change the project name [ ]
 * Create a few testscases [X]
 ---- 2023/05/16 ----
-* Recive a custom imput sign as a json and passed through the collector class [ ]
+* Recive a custom imput sign as a json and passed through the collector class [X]
+* Test the dataset generator [ ]
+* Test the main interface [ ]
+* Create some exception to hanled the files [ ]
+* Built a better code for the command line interface [ ]
 
 

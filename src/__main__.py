@@ -2,7 +2,8 @@ import argparse
 import json
 
 # Import the modules
-from .dataset import Collector, DataSet, ALPHABET_DICT
+from .dataset import Collector, DataSetCreate, ALPHABET_DICT
+from .model import Model
 
 sign_map_dict = ALPHABET_DICT
 
@@ -40,14 +41,25 @@ def main():
     )
 
     # Flags for build-dataset
-    args = parser.parse_args(
+    parser.add_argument(
         "-f", "--file-dataset",
         nargs = '?',
         metavar="PATH",
         help = "The output file where the dataset will be sotred."
     )
+
+
+    # Flags for the train command
+
+    parser.add_argument(
+        "-m", "--file-model",
+        nargs = '?',
+        metavar="PATH",
+        help = "The output file where the model brain will be sotred."
+    )
     
-    print(args)
+
+    args = parser.parse_args()
     
     config = {}
     # Parse the arguments
@@ -55,6 +67,7 @@ def main():
         if args.signs:
             # Load the new signs
             sign_map_dict = json.load(open(args.signs))
+            config["classes"] = sign_map_dict
             config["amount_classes"] = len(sign_map_dict)
         if args.amount_pictures:
             config["amount_pics"] = args.amount_pictures
@@ -74,14 +87,24 @@ def main():
             config["directory"] = args.directory
 
         # Unpack the configuration
-        dataset = DataSet(**config)
+        dataset = DataSetCreate(**config)
         dataset.build()
-        print("Dataset builted")
+        dataset.save()
+        print("Dataset builded.")
         
     elif args.command == "train":
-        print("Training the model")
-    elif args.command == "demo":
-        print("Running the demo")
+        if args.file_model:
+            config["modelfile"] = args.file_model
+        if args.file_dataset:
+            config["dataset"] = args.file_dataset
+        model = Model(**config)
+        model.train()
+        model.test()
+        model.save()
+        print("Model trained")
+        
+    elif args.command == "transcript":
+        print("Running the demo.")
     else:
         return -1
     
