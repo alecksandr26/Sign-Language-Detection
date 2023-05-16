@@ -1,7 +1,7 @@
 # Table of Contents
 * [Description](https://github.com/RaudelCasas1603/Monky-Detection-#sign-language-detection)
 * [How to install it?](https://github.com/RaudelCasas1603/Monky-Detection-#how-to-install-it)
-* [How to run it?](https://github.com/RaudelCasas1603/Monky-Detection-#how-to-train-it)
+* [How to train it?](https://github.com/RaudelCasas1603/Monky-Detection-#how-to-train-it)
    * [To to collect your own data](https://github.com/RaudelCasas1603/Monky-Detection-/tree/main#to-collect-your-own-data)
    * [To build your own dataset](https://github.com/RaudelCasas1603/Monky-Detection-#to-build-your-own-dataset)
 * [References](https://github.com/RaudelCasas1603/Monky-Detection-#references)
