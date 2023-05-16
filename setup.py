@@ -11,7 +11,7 @@ setup(
     author_email="sansepiol26@gmail.com",
     url="https://github.com/RaudelCasas1603/Monky-Detection-",  # Update with the correct URL
 
-    packages=find_packages(exclude=["test"]),
+    packages=find_packages(exclude=["test*"]),
     install_requires=[
         "opencv-python",
         "mediapipe",
