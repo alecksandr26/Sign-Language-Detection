@@ -16,6 +16,7 @@ setup(
         "opencv-python",
         "mediapipe",
         "scikit-learn",
+        "tqdm"
         # Add other dependencies here
     ],
     
