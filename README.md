@@ -34,7 +34,6 @@ To install Sign Language Detection application, follow these steps:
    pip install .
    ```
 That's it! You have now successfully installed the Sign Language Detection application.
-
 # How to run it?
 
 

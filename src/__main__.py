@@ -9,41 +9,48 @@ def main():
     # Add the command argument
     parser.add_argument(
         "command",
-        choices=["collect-data", "train", "transcript"],
+        choices=["collect-data", "build-dataset", "train", "transcript"],
         help="The command to execute. Choose from 'collect-data', 'build-dataset', 'train', or 'transcript'."
     )
     
-    # Arguments for 'collect-data' command
-    if parser.parse_args().command == "collect-data":
-        # For the collection of the data
-        parser.add_argument(
-            "-ac", "--amount-classes",
-            type = int,
-            metavar = "N",
-            help = "The number of classes or signs to classify."
-        )
-        parser.add_argument(
-            "-ap", "--amount-pictures",
-            type = int,
-            metavar = "N",
-            help = "The number of pictures to generate per class."
-        )
 
-        parser.add_argument(
-            "-pd", "--path-data",
-            metavar="PATH",
-            help="The path to store the collected data."
-        )
+
+    # For the collection of the data
+    parser.add_argument(
+        "-c", "--amount-classes",
+        nargs = '?',
+        type = int,
+        metavar = "N",
+        help = "The number of classes or signs to classify."
+    )
+    parser.add_argument(
+        "-n", "--amount-pictures",
+        nargs = '?',
+        type = int,
+        metavar = "N",
+        help = "The number of pictures to generate per class."
+    )
     
+    parser.add_argument(
+        "-p", "--path-data",
+        nargs = '?',
+        metavar="PATH",
+        help="The path to store the collected data."
+    )
+
+
+    # Arguments for 'collect-data' command
+    args = parser.parse_args()
+    
+    print(args)
     
     # Parse the arguments
-    args = parser.parse_args()
     if args.command == "collect-data":
         config = {}
         if args.amount_classes:
             config["amount_classes"] = args.amount_classes
         if args.amount_pictures:
-            config["amount_pictures"] = args.amount_pictures
+            config["amount_pics"] = args.amount_pictures
         if args.path_data:
             config["path_data"] = args.path_data
 

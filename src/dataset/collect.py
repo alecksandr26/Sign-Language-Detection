@@ -9,9 +9,9 @@ from . import *
 # TODO: implement a way to the collector to find the data
 
 class Collector:
-    def __init__(self, data_dir = DEFAULT_DATA_DIR, amount_classes = DEFAULT_AMOUNT_OF_SIGNS,
+    def __init__(self, path_data = DEFAULT_DATA_DIR, amount_classes = DEFAULT_AMOUNT_OF_SIGNS,
                  amount_pics = DATA_SIZE, device = DEFAULT_DEVICE):
-        self.data_dir = data_dir
+        self.path_data = path_data
         self.amount_classes = amount_classes
         self.amount_pics = amount_pics
         self.device = device
@@ -19,9 +19,9 @@ class Collector:
 
     def start(self):
         self._initialize_device()
-        self._create_directory(self.data_dir)
+        self._create_directory(self.path_data)
         for i in range(self.amount_classes):
-            directory = os.path.join(self.data_dir, ALPHABET_DICT[i])
+            directory = os.path.join(self.path_data, ALPHABET_DICT[i])
             print('Collecting data for class {} in {}'.format(ALPHABET_DICT[i], directory))
             self._create_directory(directory)  # Create the directory
             
@@ -45,14 +45,14 @@ class Collector:
                 ret, frame = self.cam.read()
                 cv2.imshow('frame', frame)
                 cv2.waitKey(25)
-                cv2.imwrite(os.path.join(self.data_dir, str(ALPHABET_DICT[i]), '{}.jpg'.format(c)), frame)
+                cv2.imwrite(os.path.join(self.path_data, str(ALPHABET_DICT[i]), '{}.jpg'.format(c)), frame)
                 c += 1
                 
         self._shutdown_device()
         
     def del_data(self):
         # Deletes all the collected data
-        shutil.rmtree(self.data_dir)
+        shutil.rmtree(self.path_data)
 
     def _create_directory(self, directory):
         if not os.path.exists(os.path.join(directory)):
