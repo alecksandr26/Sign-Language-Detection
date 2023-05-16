@@ -37,7 +37,7 @@ To install Sign Language Detection application, follow these steps:
    ```
 That's it! You have now successfully installed the Sign Language Detection application.
 # How to train it?
-## To train it with your data.
+## To collect your own data.
 You can create your collection of data, firstly make sure that you already have installed the program in your
 python environment, and follow the steps:
 1. Open your terminal or command prompt.
@@ -63,6 +63,13 @@ python environment, and follow the steps:
 6. Once the data collection is completed, you will see the message **"Data collection completed."** printed in the terminal.
 
 That's it! You have successfully created a data collection using the collect-data command. Adjust the arguments as needed to customize your data collection process.
+## To build your own dataset.
+
+
+
+## Download our own dataset.
+blah blah not avaiable yet >:|
+
    
 
 
