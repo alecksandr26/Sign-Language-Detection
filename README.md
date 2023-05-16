@@ -39,7 +39,7 @@ That's it! You have now successfully installed the Sign Language Detection appli
 # How to train it?
 ## To collect your own data.
 You can create your collection of data, firstly make sure that you already have installed the program in your
-python environment, and follow the steps:
+python environment, then follow the next steps:
 1. Open your terminal or command prompt.
 2. Navigate to the directory where your eviroment is located. For example:
    ```shell
@@ -64,8 +64,25 @@ python environment, and follow the steps:
 
 That's it! You have successfully created a data collection using the collect-data command. Adjust the arguments as needed to customize your data collection process.
 ## To build your own dataset.
-
-
+Firstly make sure that you have collected your data, then to build your own dataset just follow the next steps:
+1. Open your terminal or command prompt.
+2. Navigate to the directory where your environment is located. For example:
+  ```shell
+  cd /path/to/your/env/sld
+  ```
+3. Activate the virtual environment if you have created one (optional):
+  ```shell
+  source env/bin/activate  # On macOS and Linux
+  .\env\Scripts\activate  # On Windows
+  ```
+4. Run the command with the **build-dataset** command and specify the desired arguments:
+  ```shell
+  sld build-dataset -f dataset.pickle -d data/
+  ```
+  * **-f dataset.pickle** specifies the output filename of the built dataset. Replace dataset.pickle with the **desired filename**. By default, **data.pickle** is the output dataset filename.
+  * **-d data/** sets the directory where the raw data is stored. Replace **data/** with the actual directory. By default, the raw data is stored in the data/ directory.
+5. The command will start building the dataset based on the provided arguments. It will process the images from the specified data directory and generate the dataset file.
+6. Once the dataset is built, you will see the message **"Dataset built."** printed in the terminal.
 
 ## Download our own dataset.
 blah blah not avaiable yet >:|
