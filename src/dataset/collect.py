@@ -2,6 +2,7 @@ import os
 import shutil
 import cv2
 
+
 # Import the constatns
 from . import *
 
@@ -17,8 +18,8 @@ class Collector:
 
 
     def start(self):
-
         self._initialize_device()
+        self._create_directory(self.data_dir)
         for i in range(self.amount_classes):
             directory = os.path.join(self.data_dir, ALPHABET_DICT[i])
             print('Collecting data for class {} in {}'.format(ALPHABET_DICT[i], directory))
@@ -26,7 +27,7 @@ class Collector:
             
             done = False
             while True:
-                ret, frame = self.cap.read()
+                ret, frame = self.cam.read()
                 cv2.putText(frame,
                             f"Ready? To collect the letter \"{ALPHABET_DICT[i]}\", Press \"q\" to start ! :)",
                             (100, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.60, (0, 255, 0), 2,
@@ -41,7 +42,7 @@ class Collector:
             # Start taking a lot of picutres
             c = 0
             while c < self.amount_pics:
-                ret, frame = self.cap.read()
+                ret, frame = self.cam.read()
                 cv2.imshow('frame', frame)
                 cv2.waitKey(25)
                 cv2.imwrite(os.path.join(self.data_dir, str(ALPHABET_DICT[i]), '{}.jpg'.format(c)), frame)
@@ -54,14 +55,14 @@ class Collector:
         shutil.rmtree(self.data_dir)
 
     def _create_directory(self, directory):
-        if not os.path.exists(os.path.join(self.data_dir, directory)):
-            os.makedirs(os.path.join(self.data_dir, directory))
+        if not os.path.exists(os.path.join(directory)):
+            os.makedirs(os.path.join(directory))
 
     def _initialize_device(self):
-        self.cap = cv2.VideoCapture(self.device)
+        self.cam = cv2.VideoCapture(self.device)
 
     def _shutdown_device(self):
-        self.cap.release()
+        self.cam.release()
         cv2.destroyAllWindows()
 
 

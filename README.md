@@ -6,8 +6,35 @@
 # Sign Language Detection
 The Sign Language Gesture Recognition project utilizes Python, OpenCV, and the powerful Random Forest algorithm. It captures and preprocesses video frames, extracting hand landmarks using Mediapipe. These landmarks are then used as input for the Random Forest algorithm, trained on a labeled dataset of sign language gestures. The algorithm learns patterns and correlations between landmarks and gestures, enabling accurate real-time recognition.
 
+# How to install it?
+To install Sign Language Detection application, follow these steps:
+1. Clone the repository to your local machine:
+   ```shell
+   git clone https://github.com/RaudelCasas1603/Monky-Detection-.git```
+2. Navigate to the project directory:
+   ```shell
+   cd Monky-Detection-```
+3. Create a virtual environment (optional but recommended):
+   ```shell
+   python3 -m venv env
+   ```
+4. Activate the virtual environment:
+   * On macOS and Linux:
+     ```shell
+     source env/bin/activate
+     ```
+   * On Windows:
+   ```shell
+   .\env\Scripts\activate
+   ```
+5. Install the package program:
+   ```shell
+   pip install .
+   ```
+That's it! You have now successfully installed the Sign Language Detection application.
+
 # How to run it?
-blah blah blah not available yet...
+
 
 
 # References
