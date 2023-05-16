@@ -52,7 +52,7 @@ python environment, and follow the steps:
    ```
 4. Run the command with the **collect-data** command and specify the desired arguments:
    ```shell
-   python your_script.py collect-data -c 27 -n 100 -f folder-to-store-data/
+    sld collect-data -c 27 -n 100 -f folder-to-store-data/
    ```
    * **-c 27** indicates that you want to classify **27 different classes or signs**.
    * **-n 100** specifies that you want to generate **100 pictures per class or sign**.
