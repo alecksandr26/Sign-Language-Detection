@@ -9,9 +9,9 @@ DEFAULT_DEVICE = 0
 ALPHABET_DICT = {}
 
 # Loop through the range of numbers corresponding to the alphabets
-for num in range(1, 27):
+for num in range(26):
     # Convert the number to an alphabet using the chr() function
-    alphabet = chr(num + 96)  # Add 96 to get the lowercase alphabets (a=97)
+    alphabet = chr(num + 97)  # Add 97 to get the lowercase alphabets (a=97)
 
     # Add the key-value pair to the dictionary
     ALPHABET_DICT[num] = alphabet

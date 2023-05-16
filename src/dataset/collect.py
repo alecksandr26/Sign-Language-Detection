@@ -1,4 +1,5 @@
 import os
+import shutil
 import cv2
 
 # Import the constatns
@@ -16,6 +17,8 @@ class Collector:
 
 
     def start(self):
+
+        self._initialize_device()
         for i in range(self.amount_classes):
             directory = os.path.join(self.data_dir, ALPHABET_DICT[i])
             print('Collecting data for class {} in {}'.format(ALPHABET_DICT[i], directory))
@@ -25,8 +28,8 @@ class Collector:
             while True:
                 ret, frame = self.cap.read()
                 cv2.putText(frame,
-                            f"Ready? To collect the letter {ALPHABET_DICT[i]}, Press \"q\" to start ! :)",
-                            (100, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 3,
+                            f"Ready? To collect the letter \"{ALPHABET_DICT[i]}\", Press \"q\" to start ! :)",
+                            (100, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.60, (0, 255, 0), 2,
                             cv2.LINE_AA)
                 
                 cv2.imshow('frame', frame)
@@ -45,6 +48,10 @@ class Collector:
                 c += 1
                 
         self._shutdown_device()
+        
+    def del_data(self):
+        # Deletes all the collected data
+        shutil.rmtree(self.data_dir)
 
     def _create_directory(self, directory):
         if not os.path.exists(os.path.join(self.data_dir, directory)):
