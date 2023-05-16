@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm
 
 from . import *
+from .process import process_img
 
 class DataSetCreate:
     def __init__(self, directory : str = DEFAULT_DATA_DIR, filename : str = DEFAULT_DATASET_FILE):
@@ -16,35 +17,6 @@ class DataSetCreate:
         self.data = []
         self.labels = []
 
-    def _process(self, results, data_aux : [int]):
-        x_aux = []
-        y_aux = []
-        j = 0                   # A simple iterator
-        
-        # Process the results of the hand
-        for hand_landmarks in results.multi_hand_landmarks:
-            landmark = hand_landmarks.landmark  # Get the list of landmarks
-            
-            # Dump the landmarks to the  data_aux
-            for i in range(len(landmark)):
-                # Catch just the x and y coordinates
-                x = landmark[i].x
-                y = landmark[i].y
-                
-                x_aux.append(x)
-                y_aux.append(y)
-
-            x_m = min(x_aux)
-            y_m = min(y_aux)
-
-            for i in range(len(landmark)):
-                x = landmark[i].x
-                y = landmark[i].y
-
-                data_aux[j] = x - x_m
-                j += 1
-                data_aux[j] = y - y_m
-                j += 1
                 
     def save(self, savefilename : str = ""):
         if savefilename == "":
@@ -61,8 +33,6 @@ class DataSetCreate:
 
         dataset_file.close()
 
-
-
     def build(self):
         # Iterate each image from each directory
         for d in os.listdir(self.directory):
@@ -74,8 +44,7 @@ class DataSetCreate:
                 results = HANDS.process(img_rgb)  # process and create the finded landmarks
 
                 if results.multi_hand_landmarks:  # Check if a hand is detected
-                    data_aux = [0.0] * DEFAULT_ARRAY_SIZE  # Create the array with the specific size
-                    self._process(results, data_aux)
+                    data_aux, = process_img(results)  # Process the image
                     
                     self.data.append(data_aux)  # Catch all the cordinates
                     self.labels.append(d)  # Catch directory

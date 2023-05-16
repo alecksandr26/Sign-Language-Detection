@@ -4,6 +4,7 @@ import json
 # Import the modules
 from .dataset import Collector, DataSetCreate, ALPHABET_DICT
 from .model import Model
+from .features import Transcripter
 
 sign_map_dict = ALPHABET_DICT
 
@@ -48,7 +49,6 @@ def main():
         help = "The output file where the dataset will be sotred."
     )
 
-
     # Flags for the train command
 
     parser.add_argument(
@@ -57,54 +57,70 @@ def main():
         metavar="PATH",
         help = "The output file where the model brain will be sotred."
     )
-    
 
-    args = parser.parse_args()
+    # Flags to run the demo transcript
+    parser.add_argument(
+        "-o", "--transcript-out",
+        nargs = "?",
+        metavar = "PATH",
+        help = "The output from the transcription"
+    )
     
-    config = {}
+    args = parser.parse_args()
+    contex = {}
     # Parse the arguments
     if args.command == "collect-data":
         if args.signs:
             # Load the new signs
             sign_map_dict = json.load(open(args.signs))
-            config["classes"] = sign_map_dict
-            config["amount_classes"] = len(sign_map_dict)
+            contex["classes"] = sign_map_dict
+            contex["amount_classes"] = len(sign_map_dict)
         if args.amount_pictures:
-            config["amount_pics"] = args.amount_pictures
+            contex["amount_pics"] = args.amount_pictures
         if args.directory:
-            config["directory"] = args.directory
+            contex["directory"] = args.directory
 
         # Unpack the configuration 
-        collector = Collector(**config)
+        collector = Collector(**contex)
         collector.start()       # Start collecting the data
         print("Data collection completed.")
         
     elif args.command == "build-dataset":
         if args.file_dataset:
-            config["filename"] = args.file_dataset
+            contex["filename"] = args.file_dataset
             
         if args.directory:
-            config["directory"] = args.directory
+            contex["directory"] = args.directory
 
         # Unpack the configuration
-        dataset = DataSetCreate(**config)
+        dataset = DataSetCreate(**contex)
         dataset.build()
         dataset.save()
         print("Dataset builded.")
         
     elif args.command == "train":
         if args.file_model:
-            config["modelfile"] = args.file_model
+            contex["modelfile"] = args.file_model
         if args.file_dataset:
-            config["dataset"] = args.file_dataset
-        model = Model(**config)
+            contex["dataset"] = args.file_dataset
+        model = Model(**contex)
         model.train()
         model.test()
         model.save()
         print("Model trained")
         
     elif args.command == "transcript":
-        print("Running the demo.")
+        if args.file_model:
+            contex["modelfile"] = args.file_model
+
+        if args.signs:          # If you have custom signs
+            # Load the new signs
+            sign_map_dict = json.load(open(args.signs))
+            contex["classes"] = sign_map_dict
+            contex["amount_classes"] = len(sign_map_dict)
+            
+        transcripter = Transcripter(**contex)
+        transcripter.transcript()  # Run the transcript
     else:
         return -1
     

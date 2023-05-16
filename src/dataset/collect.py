@@ -77,7 +77,7 @@ class Collector:
                 cv2.waitKey(25)
                 cv2.imwrite(os.path.join(self.directory, str(self.classes[i]), '{}.jpg'.format(c)), frame)
             tqdm.write('Data for sign {} in {}. Collected!'.format(self.classes[i], directory))
-                
+            
         self._shutdown_device()
         
     def del_data(self):
