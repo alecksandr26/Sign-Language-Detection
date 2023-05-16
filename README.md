@@ -10,7 +10,8 @@ The Sign Language Gesture Recognition project utilizes Python, OpenCV, and the p
 To install Sign Language Detection application, follow these steps:
 1. Clone the repository to your local machine:
    ```shell
-   git clone https://github.com/RaudelCasas1603/Monky-Detection-.git```
+   git clone https://github.com/RaudelCasas1603/Monky-Detection-.git
+   ```
 2. Navigate to the project directory:
    ```shell
    cd Monky-Detection-```
