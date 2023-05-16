@@ -95,6 +95,8 @@ blah blah not avaiable yet >:|
 
 https://github.com/RaudelCasas1603/Monky-Detection-/assets/66882463/fcfe630d-5119-42f2-81ef-84049eb1657c
 
+## Transcription Output
+![image](https://github.com/RaudelCasas1603/Monky-Detection-/assets/66882463/a4dbbf3b-1ccd-4552-8c21-0ff0e087c884)
 
 
 # References
