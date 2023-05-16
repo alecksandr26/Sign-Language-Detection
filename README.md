@@ -51,10 +51,10 @@ python environment, and follow the steps:
    ```
 4. Run the command with the **collect-data** command and specify the desired arguments:
    ```shell
-   python your_script.py collect-data -c 27 -n 100 -p /path/to/store/data
+   python your_script.py collect-data -c 27 -n 100 -f folder-to-store-data/
    ```
    * **-c 27** indicates that you want to classify **27 different classes or signs**.
-   * **-n 100** specifies that you want to generate **100 pictures per class**.
+   * **-n 100** specifies that you want to generate **100 pictures per class or sign**.
    * **-f folder-to-store-data/** sets the folder where the collected data will be stored. Replace `folder-to-store-data/` with the actual, if the folder doesn't exist it will be created.
 5. The command will start collecting the data based on the provided arguments. It will generate pictures for each class and store them in the specified folder.
 6. Once the data collection is completed, you will see the message **"Data collection completed."** printed in the terminal.
