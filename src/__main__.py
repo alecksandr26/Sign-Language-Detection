@@ -41,6 +41,14 @@ def main():
         help = "The json file with each sign to classify."
     )
 
+    parser.add_argument(
+        "-w", "--webcam-number",
+        nargs = '?',
+        type = int,
+        metavar = "N",
+        help = "The webcam device number."
+    )
+
     # Flags for build-dataset
     parser.add_argument(
         "-f", "--file-dataset",
@@ -79,6 +87,8 @@ def main():
             contex["amount_pics"] = args.amount_pictures
         if args.directory:
             contex["directory"] = args.directory
+        if args.web_cam:
+            contex["device"] = args.web_cam
 
         # Unpack the configuration 
         collector = Collector(**contex)
@@ -118,6 +128,9 @@ def main():
             sign_map_dict = json.load(open(args.signs))
             contex["classes"] = sign_map_dict
             contex["amount_classes"] = len(sign_map_dict)
+
+        if args.web_cam:
+            contex["device"] = args.web_cam
             
         transcripter = Transcripter(**contex)
         transcripter.transcript()  # Run the transcript
