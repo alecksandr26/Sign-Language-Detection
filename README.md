@@ -16,7 +16,8 @@ To install Sign Language Detection application, follow these steps:
    ```
 2. Navigate to the project directory:
    ```shell
-   cd Monky-Detection-```
+   cd Monky-Detection-
+   ```
 3. Create a virtual environment (optional but recommended):
    ```shell
    python3 -m venv env
