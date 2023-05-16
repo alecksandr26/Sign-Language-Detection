@@ -1,7 +1,10 @@
 import argparse
+import json
 
 # Import the modules
-from .dataset import Collector
+from .dataset import Collector, DataSet, ALPHABET_DICT
+
+sign_map_dict = ALPHABET_DICT
 
 def main():
     parser = argparse.ArgumentParser()
@@ -13,16 +16,7 @@ def main():
         help="The command to execute. Choose from 'collect-data', 'build-dataset', 'train', or 'transcript'."
     )
     
-
-
-    # For the collection of the data
-    parser.add_argument(
-        "-c", "--amount-classes",
-        nargs = '?',
-        type = int,
-        metavar = "N",
-        help = "The number of classes or signs to classify."
-    )
+    # For the collector of the data
     parser.add_argument(
         "-n", "--amount-pictures",
         nargs = '?',
@@ -32,32 +26,57 @@ def main():
     )
     
     parser.add_argument(
-        "-f", "--folder",
+        "-d", "--directory",
         nargs = '?',
         metavar="PATH",
-        help="The path to store the collected data."
+        help="The directory to store the collected data."
     )
 
+    parser.add_argument(
+        "-s", "--signs",
+        nargs = '?',
+        metavar="PATH",
+        help = "The json file with each sign to classify."
+    )
 
-    # Arguments for 'collect-data' command
-    args = parser.parse_args()
+    # Flags for build-dataset
+    args = parser.parse_args(
+        "-f", "--file-dataset",
+        nargs = '?',
+        metavar="PATH",
+        help = "The output file where the dataset will be sotred."
+    )
     
     print(args)
     
+    config = {}
     # Parse the arguments
     if args.command == "collect-data":
-        config = {}
-        if args.amount_classes:
-            config["amount_classes"] = args.amount_classes
+        if args.signs:
+            # Load the new signs
+            sign_map_dict = json.load(open(args.signs))
+            config["amount_classes"] = len(sign_map_dict)
         if args.amount_pictures:
             config["amount_pics"] = args.amount_pictures
-        if args.folder:
-            config["folder"] = args.path_data
+        if args.directory:
+            config["directory"] = args.directory
 
-        # unpack the configuration 
+        # Unpack the configuration 
         collector = Collector(**config)
         collector.start()       # Start collecting the data
         print("Data collection completed.")
+        
+    elif args.command == "build-dataset":
+        if args.file_dataset:
+            config["filename"] = args.file_dataset
+            
+        if args.directory:
+            config["directory"] = args.directory
+
+        # Unpack the configuration
+        dataset = DataSet(**config)
+        dataset.build()
+        print("Dataset builted")
         
     elif args.command == "train":
         print("Training the model")

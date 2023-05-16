@@ -2,26 +2,33 @@ import os
 import shutil
 import cv2
 
-
 # Import the constatns
 from . import *
 
-# TODO: implement a way to the collector to find the data
-
 class Collector:
-    def __init__(self, folder = DEFAULT_DATA_DIR, amount_classes = DEFAULT_AMOUNT_OF_SIGNS,
-                 amount_pics = DATA_SIZE, device = DEFAULT_DEVICE):
-        self.folder = folder
+    def __init__(self, directory : str = DEFAULT_DATA_DIR, amount_classes : int = DEFAULT_AMOUNT_OF_SIGNS,
+                 amount_pics : int = DATA_SIZE, device : int = DEFAULT_DEVICE):
+        self.directory = directory
         self.amount_classes = amount_classes
         self.amount_pics = amount_pics
         self.device = device
 
+    def _create_directory(self, directory : str):
+        if not os.path.exists(os.path.join(directory)):
+            os.makedirs(os.path.join(directory))
+
+    def _initialize_device(self):
+        self.cam = cv2.VideoCapture(self.device)
+
+    def _shutdown_device(self):
+        self.cam.release()
+        cv2.destroyAllWindows()
 
     def start(self):
         self._initialize_device()
-        self._create_directory(self.folder)
+        self._create_directory(self.directory)
         for i in range(self.amount_classes):
-            directory = os.path.join(self.folder, ALPHABET_DICT[i])
+            directory = os.path.join(self.directory, ALPHABET_DICT[i])
             print('Collecting data for class {} in {}'.format(ALPHABET_DICT[i], directory))
             self._create_directory(directory)  # Create the directory
             
@@ -45,24 +52,21 @@ class Collector:
                 ret, frame = self.cam.read()
                 cv2.imshow('frame', frame)
                 cv2.waitKey(25)
-                cv2.imwrite(os.path.join(self.folder, str(ALPHABET_DICT[i]), '{}.jpg'.format(c)), frame)
+                cv2.imwrite(os.path.join(self.directory, str(ALPHABET_DICT[i]), '{}.jpg'.format(c)), frame)
                 c += 1
                 
         self._shutdown_device()
         
     def del_data(self):
-        # Deletes all the collected data
-        shutil.rmtree(self.folder)
+        # Deletes all the collected data just for testing
+        shutil.rmtree(self.directory)
 
-    def _create_directory(self, directory):
-        if not os.path.exists(os.path.join(directory)):
-            os.makedirs(os.path.join(directory))
 
-    def _initialize_device(self):
-        self.cam = cv2.VideoCapture(self.device)
+    def zip_data(self):
+        # Compress the data
+        pass
+    
 
-    def _shutdown_device(self):
-        self.cam.release()
-        cv2.destroyAllWindows()
+   
 
 

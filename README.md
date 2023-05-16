@@ -52,13 +52,16 @@ python environment, and follow the steps:
    ```
 4. Run the command with the **collect-data** command and specify the desired arguments:
    ```shell
-    sld collect-data -c 27 -n 100 -f folder-to-store-data/
+    sld collect-data -n 100 -d directory-to-store-data/ -s signs.json
    ```
-   * **-c 27** indicates that you want to classify **27 different classes or signs**.
-   * **-n 100** specifies that you want to generate **100 pictures per class or sign**.
-   * **-f folder-to-store-data/** sets the folder where the collected data will be stored. Replace `folder-to-store-data/` with the actual, if the folder doesn't exist it will be created.
+   * The **-n 100** flag is optional and specifies that you want to generate 100 pictures per class or sign. By default, the program is programmed to take at least 1000 pictures.
+   * The **-d directory-to-store-data/** flag is optional and sets the directory where the collected data will be stored. Replace directory-to-store-data/ with the actual directory path. If the directory doesn't exist, it will be created. By default, it uses the data/ directory.
+   * The **-s signs.json** flag is optional and specifies a JSON file with each sign to classify. By default, it uses the American alphabet for sign classification. Use this flag if you want to perform a custom sign classification.
+   
 5. The command will start collecting the data based on the provided arguments. It will generate pictures for each class and store them in the specified folder.
+
 6. Once the data collection is completed, you will see the message **"Data collection completed."** printed in the terminal.
+
 That's it! You have successfully created a data collection using the collect-data command. Adjust the arguments as needed to customize your data collection process.
    
 
