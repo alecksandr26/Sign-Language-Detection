@@ -44,9 +44,9 @@ class DataSetCreate:
                 results = HANDS.process(img_rgb)  # process and create the finded landmarks
 
                 if results.multi_hand_landmarks:  # Check if a hand is detected
-                    data_aux, = process_img(results)  # Process the image
+                    data_tuple = process_img(results)  # Process the image
                     
-                    self.data.append(data_aux)  # Catch all the cordinates
+                    self.data.append(data_tuple[0])  # Catch all the cordinates
                     self.labels.append(d)  # Catch directory
                     
             
