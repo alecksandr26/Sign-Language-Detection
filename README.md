@@ -1,5 +1,6 @@
 # Table of Contents
 * [Description](https://github.com/RaudelCasas1603/Monky-Detection-/tree/main#sign-language-detection)
+* [How to install it?](https://github.com/RaudelCasas1603/Monky-Detection-#how-to-install-it)
 * [How to run it?](https://github.com/RaudelCasas1603/Monky-Detection-/tree/main#how-to-run-it)
 * [References](https://github.com/RaudelCasas1603/Monky-Detection-/tree/main#references)
 
