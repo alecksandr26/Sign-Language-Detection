@@ -32,7 +32,7 @@ def main():
     )
     
     parser.add_argument(
-        "-p", "--path-data",
+        "-f", "--folder",
         nargs = '?',
         metavar="PATH",
         help="The path to store the collected data."
@@ -51,8 +51,8 @@ def main():
             config["amount_classes"] = args.amount_classes
         if args.amount_pictures:
             config["amount_pics"] = args.amount_pictures
-        if args.path_data:
-            config["path_data"] = args.path_data
+        if args.folder:
+            config["folder"] = args.path_data
 
         # unpack the configuration 
         collector = Collector(**config)
