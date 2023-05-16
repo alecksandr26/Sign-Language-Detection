@@ -42,7 +42,7 @@ def main():
     )
 
     parser.add_argument(
-        "-w", "--webcam-number",
+        "-w", "--webcam",
         nargs = '?',
         type = int,
         metavar = "N",
@@ -87,8 +87,8 @@ def main():
             contex["amount_pics"] = args.amount_pictures
         if args.directory:
             contex["directory"] = args.directory
-        if args.web_cam:
-            contex["device"] = args.web_cam
+        if args.webcam:
+            contex["device"] = args.webcam
 
         # Unpack the configuration 
         collector = Collector(**contex)
@@ -129,8 +129,8 @@ def main():
             contex["classes"] = sign_map_dict
             contex["amount_classes"] = len(sign_map_dict)
 
-        if args.web_cam:
-            contex["device"] = args.web_cam
+        if args.webcam:
+            contex["device"] = args.webcam
             
         transcripter = Transcripter(**contex)
         transcripter.transcript()  # Run the transcript
