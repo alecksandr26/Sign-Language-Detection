@@ -24,9 +24,9 @@ To install Sign Language Detection application, follow these steps:
      source env/bin/activate
      ```
    * On Windows:
-   ```shell
-   .\env\Scripts\activate
-   ```
+      ```shell
+      .\env\Scripts\activate
+      ```
 5. Install the package program:
    ```shell
    pip install .
