@@ -16,7 +16,8 @@ setup(
         "opencv-python",
         "mediapipe",
         "scikit-learn",
-        "tqdm"
+        "tqdm",
+        "tensorflow"
         # Add other dependencies here
     ],
     

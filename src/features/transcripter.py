@@ -31,15 +31,15 @@ class Transcripter(Collector):
 
             if results.multi_hand_landmarks:
                 data, x_min, y_min, x_max, y_max = process_img(results)  # Fetcht the data
-
-                # prediction = self.model.predict([np.asarray(data)])
-                prediction = self.model.predict([np.asarray(data).reshape(-1, 84, 1)])
-                predicted_label = prediction[0]
+                
+                prediction = self.model.predict([np.asarray(data).reshape(-1, 84, 1)], verbose = 0)
+                prediction_index_label = np.argmax(prediction, axis = 1)[0]
+                predicted_label = self.classes[prediction_index_label]
+                
                 # Wen detectes something different
                 if prev_label != predicted_label:
                     print(predicted_label, file = self.stdout, end='')  # Print the transcripted
                     prev_label = predicted_label
-                    
 
                 # Mark the detected prediction
                 x1 = int(x_min * W) - 10

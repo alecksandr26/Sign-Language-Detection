@@ -127,7 +127,6 @@ def main():
             # Load the new signs
             sign_map_dict = json.load(open(args.signs))
             contex["classes"] = sign_map_dict
-            contex["amount_classes"] = len(sign_map_dict)
 
         if args.webcam:
             contex["device"] = args.webcam
