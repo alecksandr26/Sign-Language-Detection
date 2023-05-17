@@ -32,7 +32,8 @@ class Transcripter(Collector):
             if results.multi_hand_landmarks:
                 data, x_min, y_min, x_max, y_max = process_img(results)  # Fetcht the data
 
-                prediction = self.model.predict([np.asarray(data)])
+                # prediction = self.model.predict([np.asarray(data)])
+                prediction = self.model.predict([np.asarray(data).reshape(-1, 84, 1)])
                 predicted_label = prediction[0]
                 # Wen detectes something different
                 if prev_label != predicted_label:

@@ -104,3 +104,8 @@ https://github.com/RaudelCasas1603/Monky-Detection-/assets/66882463/fcfe630d-511
 * Normalized Nerd. (2021, January 13). Decision Tree Classification Clearly Explained! [Video]. YouTube. https://www.youtube.com/watch?v=ZVR2Way4nwQ
 * Normalized Nerd. (2021b, April 21). Random Forest Algorithm Clearly Explained! [Video]. YouTube. https://www.youtube.com/watch?v=v6VJ2RO66A
 * Gutta, S. (2022, January 6). Folder Structure for Machine Learning Projects | by Surya Gutta  | Analytics Vidhya. Medium. https://medium.com/analytics-vidhya/folder-structure-for-machine-learning-projects-a7e451a8caaa
+
+* https://www.tensorflow.org/tutorials/images/cnn
+* https://stackoverflow.com/questions/40273109/convert-python-opencv-mat-image-to-tensorflow-image-data
+
+
