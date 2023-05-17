@@ -92,12 +92,7 @@ blah blah not avaiable yet >:|
 
 # Examples
 ## Video example   
-
-https://github.com/RaudelCasas1603/Monky-Detection-/assets/66882463/fcfe630d-5119-42f2-81ef-84049eb1657c
-
-## Transcription Output
-![image](https://github.com/RaudelCasas1603/Monky-Detection-/assets/66882463/a4dbbf3b-1ccd-4552-8c21-0ff0e087c884)
-
+working ont eh new video
 
 # References
 * Computer vision engineer. (2023, January 26). Sign language detection with Python and Scikit Learn | Landmark detection | Computer vision tutorial [Video]. YouTube. https://www.youtube.com/watch?v=MJCSjXepaAM
